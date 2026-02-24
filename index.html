@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Job Application Tracker</title>
+   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body class="bg-slate-50 min-h-screen p-4 md:p-8">
+   
+   <div class="max-w-5xl mx-auto">
+      <header class="mb-8">
+         <h1 class="text-2xl font-bold text-slate-800 mb-6">job Application Tracker</h1>
+         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+               <p class="text-slate-500 font-medium">Total</p>
+               <h2 id="total-count" class="text-3xl font-bold text-gray-900">8</h2>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+               <p class="text-slate-500 font-medium ">Interview</p>
+               <h2 id="interview-count" class="text-3xl font-bold text-green-600">0</h2>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
+               <p class="text-slate-500 font-medium">Rejected</p>
+               <h2 id="rejected-count" class="text-3xl font-bold text-red-600">0</h2>
+            </div>
+         </div>
+      </header>
+
+      <section class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
+         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
+          <h3 class="text-xl font-bold">Available Jobs</h3>
+          <span class="badge badge ghost p-4 font-semibold"><span id="tab-count">8</span></span>  
+         </div>
+
+         <div role="tablist" class="tabs tabs-boxed mb-8 bg-slate-100">
+            <a role="tab" class="tab tab-active transition-all" onclick="switchTab('all',this)">All</a> 
+
+            <a role="tab" class="tab transition-all" onclick="switchTab('interview',this)">Interview</a> 
+
+            <a role="tab" class="tab transition-all" onclick="switchTab('rejected',this)">Rejected</a>
+         </div>
+
+         <div id="jobs-container" class="space-y-4"></div>
+      </section>
+   </div>
+   
+   <script src="script.js"></script>
+</body>
+</html>
